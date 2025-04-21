@@ -1,0 +1,7 @@
+{
+  "timestamp": "2025-04-21T02:40:21.780363",
+  "status": 400,
+  "error": "Invalid Input",
+  "message": "Invalid zipcode format. Expected 5 digits or 5+4 digits (e.g., 12345 or 12345-6789)",
+  "path": "/maps/banksIn10Miles"
+} 

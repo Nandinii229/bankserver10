@@ -1,0 +1,27 @@
+Bank Finder Microservices Architecture
+===============================
+
++------------------+       +-----------------+       +---------------+
+|                  |       |                 |       |               |
+|     Client       | ----> |  Banks Service  | ----> |  Maps Service |
+|                  |       |   (Port 8082)   |       |  (Port 8081)  |
++------------------+       +-----------------+       +-------+-------+
+                                                            |
+                                                            |
+                                                            v
+                                                 +---------------------+
+                                                 |                     |
+                                                 |  Google Maps APIs   |
+                                                 |  - Geocoding API    |
+                                                 |  - Places API       |
+                                                 |                     |
+                                                 +---------------------+
+
+Data Flow:
+1. Client sends request to Banks Service: GET /banks/nearby?zipcode=60601
+2. Banks Service forwards to Maps Service: GET /maps/banksIn10Miles?zipcode=60601
+3. Maps Service uses Google APIs:
+   a. Geocoding API to convert zipcode to coordinates
+   b. Places API to find banks within 10 miles (16,093 meters)
+4. Maps Service returns list of bank names to Banks Service
+5. Banks Service returns list of bank names to Client 

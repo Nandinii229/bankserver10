@@ -1,0 +1,76 @@
+{
+	"info": {
+		"_postman_id": "7a8b3c4d-5e6f-7g8h-9i0j-1k2l3m4n5o6p",
+		"name": "Bank Finder",
+		"description": "Collection for testing the Bank Finder microservices application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Maps Service",
+			"item": [
+				{
+					"name": "Find Banks in 10 Miles by Zipcode",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8081/maps/banksIn10Miles?zipcode=98390",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"maps",
+								"banksIn10Miles"
+							],
+							"query": [
+								{
+									"key": "zipcode",
+									"value": "98390"
+								}
+							]
+						},
+						"description": "Gets a list of banks within a 10-mile radius of the provided zipcode directly from the Maps service."
+					},
+					"response": []
+				}
+			],
+			"description": "Requests for the Maps Service"
+		},
+		{
+			"name": "Banks Service",
+			"item": [
+				{
+					"name": "Find Nearby Banks by Zipcode",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/banks/nearby?zipcode=60601",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"banks",
+								"nearby"
+							],
+							"query": [
+								{
+									"key": "zipcode",
+									"value": "60601"
+								}
+							]
+						},
+						"description": "Gets a list of banks near the provided zipcode through the Banks service."
+					},
+					"response": []
+				}
+			],
+			"description": "Requests for the Banks Service"
+		}
+	]
+} 

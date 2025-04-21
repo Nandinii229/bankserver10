@@ -1,0 +1,10 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: maps-service
+
+google:
+  api:
+    key: AIzaSyAepT4iUx9G9AjXCbnZnE1GNELo4Glqxwk 

@@ -1,0 +1,7 @@
+{
+  "timestamp": "2025-04-21T02:41:09.441083",
+  "status": 400,
+  "error": "Missing Parameter",
+  "message": "Required parameter 'zipcode' is missing",
+  "path": "/maps/banksIn10Miles"
+} 
